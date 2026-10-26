@@ -40,6 +40,9 @@
   --mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --max: 1180px;
   --gutter: clamp(20px, 4vw, 48px);
+  --consent-bg: #14161a;
+  --consent-fg: #eef1f5;
+  --consent-accent: #ff4f8b;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
