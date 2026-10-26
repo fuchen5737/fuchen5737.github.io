@@ -52,6 +52,15 @@
     });
   }
 
+  function trackEvent(name, params) {
+    if (!name || typeof name !== "string") return;
+    if (typeof gtag !== "function") return;
+    if (readChoice() !== "granted") return;
+    gtag("event", name, params || {});
+  }
+
+  window.trackEvent = trackEvent;
+
   function injectStyles() {
     if (document.getElementById("ga-consent-style")) return;
     var style = document.createElement("style");

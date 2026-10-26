@@ -57,6 +57,10 @@ function currentStyle() {
   return form.querySelector('input[name="style"]:checked')?.value || "classic";
 }
 
+function track(name, params) {
+  if (typeof window.trackEvent === "function") window.trackEvent(name, params);
+}
+
 function readForm() {
   return {
     p1: form.querySelector("#p1").value.trim(),
@@ -137,6 +141,7 @@ function renderRows(results) {
         copy.innerHTML = ICON_COPY;
       }, 1200);
       showToast(`${item.tag} copied.`);
+      track("hashtag_copied", { source: "row" });
     });
 
     row.append(num, tag, style, copy);
@@ -173,7 +178,7 @@ function paintSheet(results, { scroll = true } = {}) {
   }
 }
 
-function runGenerator({ scroll = true } = {}) {
+function runGenerator({ scroll = true, trigger = "form" } = {}) {
   clearError();
   const data = readForm();
   const missing = [];
@@ -203,6 +208,13 @@ function runGenerator({ scroll = true } = {}) {
   }
 
   paintSheet(results, { scroll });
+  track("hashtag_sheet_created", {
+    style: data.style,
+    hashtags: results.length,
+    has_last_name: Boolean(data.last),
+    has_detail: Boolean(data.detail),
+    trigger,
+  });
 }
 
 form?.addEventListener("submit", (event) => {
@@ -229,11 +241,12 @@ copyAllButton?.addEventListener("click", async () => {
   const text = state.results.map((item) => item.tag).join(" ");
   const ok = await copyText(text);
   showToast(ok ? `All ${state.results.length} hashtags copied.` : "Couldn’t copy — try selecting the tags.");
+  if (ok) track("hashtags_copied_all", { count: state.results.length });
 });
 
 printAnotherButton?.addEventListener("click", () => {
   if (!state.data) return;
-  runGenerator({ scroll: false });
+  runGenerator({ scroll: false, trigger: "another" });
   showToast("Another sheet printed.");
 });
 
@@ -245,7 +258,7 @@ fillExampleButton?.addEventListener("click", () => {
   form.querySelector("#detail").value = "we met at a dog park";
   const classic = form.querySelector('input[name="style"][value="classic"]');
   if (classic) classic.checked = true;
-  runGenerator();
+  runGenerator({ trigger: "example" });
 });
 
 function fitFont(ctx, text, maxWidth, startSize, weight = "800", family = '"Bricolage Grotesque", sans-serif') {
@@ -439,6 +452,7 @@ saveImageButton?.addEventListener("click", async () => {
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1500);
     showToast("Share card saved.");
+    track("share_card_downloaded", { style: state.data.style });
   } catch {
     showToast("Couldn’t render the image. Try again.");
   } finally {
