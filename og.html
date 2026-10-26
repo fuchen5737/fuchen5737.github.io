@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tag the Vows — social card</title>
+<style>
+  @font-face {
+    font-family: "Bricolage Grotesque";
+    src: url("./assets/fonts/bricolage-latin.woff2") format("woff2");
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "Public Sans";
+    src: url("./assets/fonts/public-sans-latin.woff2") format("woff2");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "Roboto Mono";
+    src: url("./assets/fonts/roboto-mono-latin.woff2") format("woff2");
+    font-weight: 400 600;
+    font-style: normal;
+    font-display: block;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #2743f0;
+    color: #eef1f5;
+    font-family: "Public Sans", Arial, sans-serif;
+  }
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    display: grid;
+    grid-template-columns: 1fr 470px;
+    gap: 44px;
+    padding: 62px 64px 44px;
+    overflow: hidden;
+  }
+  .dots {
+    position: absolute;
+    top: 0; right: 0;
+    width: 260px; height: 180px;
+    background-image: radial-gradient(circle, rgba(238,241,245,.22) 1.3px, transparent 1.5px);
+    background-size: 13px 13px;
+  }
+  .glyph {
+    position: absolute;
+    right: 300px; bottom: -120px;
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 420px;
+    line-height: 1;
+    color: #ff4f8b;
+    opacity: .12;
+  }
+  .copy { position: relative; z-index: 1; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -.02em; text-transform: uppercase; }
+  .mark { width: 38px; height: 38px; }
+  h1 {
+    margin: 52px 0 0;
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 66px;
+    line-height: .94;
+    letter-spacing: -.035em;
+    max-width: 600px;
+  }
+  h1 em { font-style: normal; color: #ffd23f; }
+  p { max-width: 520px; margin: 20px 0 0; font-size: 21px; line-height: 1.45; color: #dfe4ff; }
+  .foot { margin-top: auto; display: flex; align-items: center; gap: 14px; font-family: "Roboto Mono", monospace; font-size: 13px; letter-spacing: .05em; color: #ffd23f; }
+  .foot span { width: 26px; height: 2px; background: #ff4f8b; }
+  .sheet {
+    position: relative;
+    align-self: center;
+    width: 470px;
+    background: #fff;
+    color: #14161a;
+    border: 2px solid #14161a;
+    transform: rotate(1.5deg);
+  }
+  .bar { display: grid; grid-template-columns: repeat(5, 1fr); height: 8px; }
+  .bar i { box-shadow: inset 0 0 0 1px rgba(20,22,26,.35); }
+  .bar i:nth-child(1) { background: #ff4f8b; }
+  .bar i:nth-child(2) { background: #2743f0; }
+  .bar i:nth-child(3) { background: #ffd23f; }
+  .bar i:nth-child(4) { background: #14161a; }
+  .bar i:nth-child(5) { background: #e2e7ee; }
+  .sheet__head { display: flex; justify-content: space-between; padding: 14px 18px; border-bottom: 2px solid #14161a; font-family: "Roboto Mono", monospace; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+  .sheet__head span { color: #5c6472; }
+  .rows { padding: 4px 18px 14px; }
+  .row { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: baseline; padding: 15px 0; border-bottom: 1px dashed rgba(20,22,26,.3); font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -.01em; }
+  .row:last-child { border-bottom: 0; }
+  .row b { font-family: "Roboto Mono", monospace; font-size: 10px; font-weight: 500; color: #5c6472; }
+  .stamp { position: absolute; right: 26px; top: 66px; width: 86px; height: 86px; display: grid; place-items: center; border: 2px solid #ff4f8b; border-radius: 50%; color: #ff4f8b; font-family: "Roboto Mono", monospace; font-size: 10px; font-weight: 600; letter-spacing: .12em; transform: rotate(-9deg); }
+  .stamp::after { content: ""; position: absolute; inset: 5px; border: 1px solid #ff4f8b; border-radius: 50%; }
+  .watermark { position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%) rotate(-17deg); font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 800; font-size: 96px; letter-spacing: .08em; color: #ff4f8b; opacity: .07; white-space: nowrap; }
+  .bottom-bar { position: absolute; left: 0; bottom: 0; width: 100%; height: 10px; display: grid; grid-template-columns: 38% 22% 14% 26%; }
+  .bottom-bar i:nth-child(1) { background: #ff4f8b; }
+  .bottom-bar i:nth-child(2) { background: #ffd23f; }
+  .bottom-bar i:nth-child(3) { background: #eef1f5; }
+  .bottom-bar i:nth-child(4) { background: #1b2fbd; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="dots"></div>
+  <div class="glyph" aria-hidden="true">#</div>
+  <div class="copy">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" fill="#eef1f5"/><path d="M12 7v18M20 7v18M7 12h18M7 20h18" stroke="#14161a" stroke-width="2.2"/><circle cx="27" cy="5" r="3" fill="#ff4f8b"/></svg>
+      Tag the Vows
+    </div>
+    <h1>Wedding hashtags, <em>printed fresh.</em></h1>
+    <p>Type your names. Pick a mood. Print a proof sheet your guests will actually use.</p>
+    <div class="foot"><span></span>tagthevows.com · free · no signup</div>
+  </div>
+  <div class="sheet">
+    <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="sheet__head"><strong>Proof sheet</strong><span>24 hashtags</span></div>
+    <div class="rows">
+      <div class="row"><b>01</b>#HappilyEverSmith</div>
+      <div class="row"><b>02</b>#TheSmiths</div>
+      <div class="row"><b>03</b>#YouMayNowScroll</div>
+      <div class="row"><b>04</b>#MeetTheSmiths</div>
+      <div class="row"><b>05</b>#Smith2027</div>
+    </div>
+    <div class="stamp" aria-hidden="true">Proof</div>
+    <div class="watermark" aria-hidden="true">Proof</div>
+  </div>
+  <div class="bottom-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div>
+</body>
+</html>
