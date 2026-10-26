@@ -63,7 +63,7 @@
     <p>Like any website, the static host that serves these pages may keep standard server logs (IP address, user agent, requested URL) for security and reliability. Those logs are separate from the generator and are not used to rebuild your names.</p>
 
     <h2>Analytics</h2>
-    <p>We use Google Analytics 4 (Measurement ID G-QT91VKFN8L) to count visits and learn which pages are useful. The Google tag does not load until you choose “Allow analytics” in the consent bar. If you allow it, Google may set cookies and process visit data as described in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>. If you decline, the tag stays off.</p>
+    <p>We use Google Analytics 4 (Measurement ID G-QT91VKFN8L) to count visits and learn which pages are useful. The Google tag runs in consent mode on every page. Before you choose, it does not send a pageview or set analytics cookies. If you allow it, Google may set cookies and process visit data as described in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>. If you decline, analytics storage stays off.</p>
     <p><button class="link-button" type="button" data-consent-settings>Change analytics choice</button></p>
 
     <h2>Advertising</h2>
@@ -108,6 +108,8 @@
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QT91VKFN8L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});gtag('js',new Date());gtag('config','G-QT91VKFN8L',{anonymize_ip:true,send_page_view:false});</script>
 <script>window.__GA__={id:"G-QT91VKFN8L",consentHref:"/privacy/"};</script>
 <script defer src="/assets/analytics.js"></script>
 </body>

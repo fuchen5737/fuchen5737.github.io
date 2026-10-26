@@ -15,6 +15,8 @@
     return;
   }
 
+  if (typeof window.gtag !== "function") return;
+
   function readChoice() {
     try {
       return localStorage.getItem(KEY);
@@ -43,29 +45,11 @@
     }
   }
 
-  function loadGa() {
-    if (window.__gaLoaded) return;
-    window.__gaLoaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-
-    gtag("consent", "default", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied",
+  function sendPageView() {
+    gtag("event", "page_view", {
+      page_location: location.href,
+      page_title: document.title,
     });
-    gtag("js", new Date());
-    gtag("consent", "update", { analytics_storage: "granted" });
-    gtag("config", id, { anonymize_ip: true });
-
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
-    document.head.appendChild(script);
   }
 
   function injectStyles() {
@@ -108,20 +92,23 @@
       .addEventListener("click", function () {
         writeChoice("granted");
         banner.remove();
-        loadGa();
+        gtag("consent", "update", { analytics_storage: "granted" });
+        sendPageView();
       });
     banner
       .querySelector('[data-consent="denied"]')
       .addEventListener("click", function () {
         writeChoice("denied");
         banner.remove();
+        gtag("consent", "update", { analytics_storage: "denied" });
       });
   }
 
   function init() {
     var choice = readChoice();
     if (choice === "granted") {
-      loadGa();
+      gtag("consent", "update", { analytics_storage: "granted" });
+      sendPageView();
     } else if (choice !== "denied") {
       showBanner();
     }
