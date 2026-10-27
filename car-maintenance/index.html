@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Maintenance Planner — Build a 12-Month Schedule | Milemark</title>
+<meta name="description" content="Turn your odometer and driving habits into a 12-month car maintenance schedule. Log services, print the sheet, and use it for gas, hybrid, or EV.">
+<link rel="canonical" href="https://smalljobtools.com/car-maintenance/">
+<meta name="theme-color" content="#171916">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Milemark">
+<meta property="og:title" content="Car Maintenance Planner — Build a 12-Month Schedule | Milemark">
+<meta property="og:description" content="Turn your odometer and driving habits into a 12-month car maintenance schedule. Log services, print the sheet, and use it for gas, hybrid, or EV.">
+<meta property="og:url" content="https://smalljobtools.com/car-maintenance/">
+<meta property="og:image" content="https://smalljobtools.com/car-maintenance/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Maintenance Planner — Build a 12-Month Schedule | Milemark">
+<meta name="twitter:description" content="Turn your odometer and driving habits into a 12-month car maintenance schedule. Log services, print the sheet, and use it for gas, hybrid, or EV.">
+<meta name="twitter:image" content="https://smalljobtools.com/car-maintenance/assets/og.png">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="./assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Milemark — Car Maintenance Planner","url":"https://smalljobtools.com/car-maintenance/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free car maintenance planner that turns your odometer, annual mileage, and driving profile into a 12-month service schedule with a local log and printable sheet."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a manufacturer maintenance schedule?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general planner based on common service intervals. Your owner’s manual and any factory service schedule are the final authority, especially for oil spec, fluids, and warranty requirements."}},{"@type":"Question","name":"How are the due dates calculated?","acceptedAnswer":{"@type":"Answer","text":"We add the interval to your current odometer, convert the mileage interval into a date using your annual mileage, and also apply a time interval. The earlier of the two becomes the due date."}},{"@type":"Question","name":"What counts as severe driving?","acceptedAnswer":{"@type":"Answer","text":"Towing, hauling, frequent short trips, stop-and-go traffic, dusty roads, mountains, and extreme heat or cold are common severe-duty conditions. The planner shortens the intervals for oil, filters, and some fluids."}},{"@type":"Question","name":"Can I use this for an EV or hybrid?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose the powertrain and engine-only jobs such as oil and spark plugs disappear. EVs still need tires, brakes, cabin filters, coolant, and charging-equipment checks; hybrids add inverter cooling."}},{"@type":"Question","name":"Where is my log saved?","acceptedAnswer":{"@type":"Answer","text":"In this browser’s local storage. It does not go to a server. Clearing browser data or switching devices will clear it, so print the sheet if you want a permanent copy."}},{"@type":"Question","name":"Does this replace a mechanic?","acceptedAnswer":{"@type":"Answer","text":"No. It helps you ask better questions and avoid missed routine work. Sounds, smells, warning lights, and safety concerns should be inspected by a qualified mechanic now, not on a schedule."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QT91VKFN8L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});gtag('js',new Date());gtag('config','G-QT91VKFN8L',{anonymize_ip:true,send_page_view:false});</script>
+</head>
+<body data-page="home" data-preset-miles="" data-preset-driving="">
+<a class="skip-link" href="#top">Skip to planner</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="./" aria-label="Milemark home"><svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#ff5a2a"/><path d="M9 42h46l-5-12c-1-3-3-5-7-5H21c-4 0-6 2-7 5L9 42Z" fill="#171916"/><path d="M19 25l4-7c1-2 3-3 5-3h8c2 0 4 1 5 3l4 7" fill="none" stroke="#f4c84a" stroke-width="3"/><circle cx="19" cy="43" r="5" fill="#171916" stroke="#f3efe4" stroke-width="2"/><circle cx="45" cy="43" r="5" fill="#171916" stroke="#f3efe4" stroke-width="2"/></svg><span>Milemark</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./car-maintenance-checklist-by-mileage/">By mileage</a>
+      <a href="./100000-mile-car-maintenance-checklist/">100k miles</a>
+      <a href="./severe-driving-maintenance-schedule/">Severe duty</a>
+    </nav>
+    <span class="header-chip">Free · No signup</span>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Car maintenance, minus the guesswork</p>
+      <h1>Know what’s due. <em>Before the light comes on.</em></h1>
+      <p class="hero__sub">Turn your odometer and driving habits into a 12-month service plan. Log what is done, print the sheet, and stop rebuilding the same mental list every season.</p>
+      <p class="hero__trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Free · No signup · Gas, hybrid, and EV</p>
+      <p class="hero__note"><strong>General guidance, not a factory schedule.</strong> Intervals vary by vehicle and conditions. Your owner’s manual is the final word.</p>
+    </div>
+    <div><form class="ticket" id="car-form" novalidate>
+  <div class="ticket__head"><strong>Milemark / service order</strong><span>12-month preview</span></div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="current-miles">Current odometer</label>
+      <input id="current-miles" name="current-miles" type="number" inputmode="numeric" min="0" max="500000" step="100" value="72500">
+    </div>
+    <div class="field">
+      <label for="annual-miles">Miles per year</label>
+      <input id="annual-miles" name="annual-miles" type="number" inputmode="numeric" min="1000" max="80000" step="500" value="12000">
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="field">
+      <label for="driving">Driving profile</label>
+      <select id="driving" name="driving">
+        <option value="mixed">Mixed driving</option>
+<option value="highway">Mostly highway</option>
+<option value="city">Mostly city</option>
+<option value="severe">Severe duty</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="powertrain">Powertrain</label>
+      <select id="powertrain" name="powertrain">
+        <option value="gas">Gas</option>
+<option value="hybrid">Hybrid</option>
+<option value="ev">Electric</option>
+      </select>
+    </div>
+  </div>
+  <p class="form-error" id="form-error" role="alert" hidden></p>
+  <button class="submit" type="submit"><span>Build my schedule</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+  <button class="ticket__link" id="fill-example" type="button">Use a sample car</button>
+  <p class="ticket__foot">No signup · Saved in this browser · General guidance only</p>
+</form></div>
+  </div>
+</section>
+<section class="plan-section" id="plan">
+  <div class="wrap">
+    <div class="plan-intro">
+      <h2>Your next 12 months</h2>
+      <p>A dated work order, not a wall of advice. Check things off as you go; the log stays in this browser.</p>
+    </div>
+    <div class="plan-empty" id="plan-empty">
+      <p class="plan-empty__head">No plan yet <span class="plan-empty__stamp">Awaiting mileage</span></p>
+      <p>Enter your current odometer and annual miles. We will turn the general intervals into dates and mileage points for the next year.</p>
+    </div>
+    <div id="plan-body-wrap" hidden>
+      <div class="plan-wrap">
+        <div class="plan__top">
+          <div class="plan__summary">
+            <p class="plan__kicker">Service plan / next 12 months</p>
+            <div class="plan__next"><strong id="next-title">—</strong><span id="next-date">—</span></div>
+            <div class="summary-grid">
+              <div class="summary-card"><b id="due-count">0</b><span>Services due</span></div>
+              <div class="summary-card"><b id="due-soon">0</b><span>Due soon</span></div>
+              <div class="summary-card"><b id="done-count">0</b><span>Logged</span></div>
+            </div>
+          </div>
+          <div class="plan__side">
+            <h3>Work order</h3>
+            <p class="plan__meta" id="plan-meta">—</p>
+            <div class="progress">
+              <div class="progress__labels"><span id="progress-label">0 of 0 logged</span><span>Progress</span></div>
+              <div class="progress__track" role="progressbar" aria-label="Services logged" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
+                <div class="progress__bar" id="progress-bar"></div>
+              </div>
+            </div>
+            <div class="plan__actions">
+              <button class="button" id="print-plan" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 9V3h10v6M7 17H4v-8h16v8h-3M8 14h8v7H8z"/></svg><span>Print sheet</span></button>
+              <button class="button" id="copy-plan" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V4h11"/></svg><span>Copy plan</span></button>
+              <button class="button" id="clear-log" type="button">Clear log</button>
+            </div>
+          </div>
+        </div>
+        <div class="plan-body">
+          <div id="plan-body"></div>
+        </div>
+      </div>
+      <section class="later" hidden>
+        <h3>On the radar</h3>
+        <ul id="later-body"></ul>
+      </section>
+      <section class="habits">
+        <h3>Monthly habits</h3>
+        <ul id="habits-body"></ul>
+      </section>
+      <p class="sr-only" id="plan-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section__head"><h2>Three numbers in. A year of service out.</h2><p>No account, no vehicle database, no pretending we know your exact make and model.</p></div>
+    <div class="how">
+      <div class="how__item"><span class="how__num">01</span><h3>Enter the odometer</h3><p>Current miles and your annual pace turn mileage intervals into dates you can plan around.</p></div>
+      <div class="how__item"><span class="how__num">02</span><h3>Pick the duty cycle</h3><p>Stop-and-go, towing, dust, and extreme temperatures shorten many intervals. Severe duty gets its own numbers.</p></div>
+      <div class="how__item"><span class="how__num">03</span><h3>Log and print</h3><p>Check jobs off as they are done. The log stays in this browser; the print sheet goes to the glovebox.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap split">
+    <h2>A checklist is a list. A schedule is a decision.</h2>
+    <div class="prose">
+      <p>Most car maintenance content tells you to “change the oil every 5,000 to 7,500 miles” and leaves you to do the math. The hard part is not knowing that oil exists. It is knowing what is due before a busy month, a road trip, or a warning light turns a routine job into an emergency.</p>
+      <p>Milemark starts with your current mileage and annual pace. It turns each interval into a due date and a due odometer reading, then sorts the next year. You can see the next job, the ones that can wait, and the monthly habits that prevent surprises.</p>
+      <h3>Built for the glovebox</h3>
+      <ul>
+        <li>Gas, hybrid, and EV plans; engine-only jobs drop out of an EV schedule.</li>
+        <li>A severe-duty switch for towing, short trips, dust, mountains, and extreme weather.</li>
+        <li>A local log you can check off, plus a print view with room for a mechanic’s notes.</li>
+        <li>No account, no VIN, no made-up “exact” factory data.</li>
+      </ul>
+      <p>Use it as a second set of eyes, not a replacement for the manual or a mechanic. When the car makes a new noise or a brake pedal feels different, inspect now; a calendar cannot hear a wheel bearing.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section__head"><h2>Good questions.</h2><p>Short answers. The owner’s manual still wins.</p></div>
+    <div class="faq">
+      <details><summary>Is this a manufacturer maintenance schedule?</summary><p>No. It is a general planner based on common service intervals. Your owner’s manual and any factory service schedule are the final authority, especially for oil spec, fluids, and warranty requirements.</p></details>
+<details><summary>How are the due dates calculated?</summary><p>We add the interval to your current odometer, convert the mileage interval into a date using your annual mileage, and also apply a time interval. The earlier of the two becomes the due date.</p></details>
+<details><summary>What counts as severe driving?</summary><p>Towing, hauling, frequent short trips, stop-and-go traffic, dusty roads, mountains, and extreme heat or cold are common severe-duty conditions. The planner shortens the intervals for oil, filters, and some fluids.</p></details>
+<details><summary>Can I use this for an EV or hybrid?</summary><p>Yes. Choose the powertrain and engine-only jobs such as oil and spark plugs disappear. EVs still need tires, brakes, cabin filters, coolant, and charging-equipment checks; hybrids add inverter cooling.</p></details>
+<details><summary>Where is my log saved?</summary><p>In this browser’s local storage. It does not go to a server. Clearing browser data or switching devices will clear it, so print the sheet if you want a permanent copy.</p></details>
+<details><summary>Does this replace a mechanic?</summary><p>No. It helps you ask better questions and avoid missed routine work. Sounds, smells, warning lights, and safety concerns should be inspected by a qualified mechanic now, not on a schedule.</p></details>
+    </div>
+  </div>
+</section>
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <h2>Know what’s due before the light comes on.</h2>
+    <a href="#car-form">Build my schedule <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__inner">
+      <div>
+        <a class="brand" href="./"><svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#ff5a2a"/><path d="M9 42h46l-5-12c-1-3-3-5-7-5H21c-4 0-6 2-7 5L9 42Z" fill="#171916"/><path d="M19 25l4-7c1-2 3-3 5-3h8c2 0 4 1 5 3l4 7" fill="none" stroke="#f4c84a" stroke-width="3"/><circle cx="19" cy="43" r="5" fill="#171916" stroke="#f3efe4" stroke-width="2"/><circle cx="45" cy="43" r="5" fill="#171916" stroke="#f3efe4" stroke-width="2"/></svg><span>Milemark</span></a>
+        <p class="site-footer__note">A service plan built from your odometer, not a generic list. Log what is done, print the sheet, and keep the next thing in view.</p>
+      </div>
+      <div>
+        <h2>Planner</h2>
+        <ul>
+          <li><a href="./">Car maintenance planner</a></li>
+          <li><a href="./car-maintenance-checklist-by-mileage/">By mileage</a></li>
+          <li><a href="./100000-mile-car-maintenance-checklist/">100,000 miles</a></li>
+          <li><a href="./severe-driving-maintenance-schedule/">Severe duty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Useful</h2>
+        <ul>
+          <li><a href="./privacy/">Privacy</a></li>
+          <li><a href="./#how">How it works</a></li>
+          <li><a href="./#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 Milemark</span>
+      <span>General guidance only · Your owner’s manual is the final word</span>
+    </div>
+  </div>
+<div style="max-width:1180px;margin:24px auto 0;padding:16px 24px 0;border-top:1px solid rgba(128,128,128,.35);font:12px/1.5 system-ui,sans-serif;opacity:1"><a href="/" style="color:inherit;text-decoration:underline">Small Job Tools — all tools</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./assets/app.js"></script>
+<script>window.__GA__={id:"G-QT91VKFN8L",consentHref:"./privacy/"};</script>
+<script defer src="./assets/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mulch Calculator — Cubic Yards, Bags &amp; Cost | Bulk Yard</title>
+<meta name="description" content="A free mulch calculator that turns bed size and depth into cubic yards, bags, and a rough cost. Also works for gravel, topsoil, and sod.">
+<link rel="canonical" href="https://smalljobtools.com/garden-calculators/">
+<meta name="theme-color" content="#12351c">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bulk Yard">
+<meta property="og:title" content="Mulch Calculator — Cubic Yards, Bags &amp; Cost | Bulk Yard">
+<meta property="og:description" content="A free mulch calculator that turns bed size and depth into cubic yards, bags, and a rough cost. Also works for gravel, topsoil, and sod.">
+<meta property="og:url" content="https://smalljobtools.com/garden-calculators/">
+<meta property="og:image" content="https://smalljobtools.com/garden-calculators/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mulch Calculator — Cubic Yards, Bags &amp; Cost | Bulk Yard">
+<meta name="twitter:description" content="A free mulch calculator that turns bed size and depth into cubic yards, bags, and a rough cost. Also works for gravel, topsoil, and sod.">
+<meta name="twitter:image" content="https://smalljobtools.com/garden-calculators/assets/og.png">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="./assets/fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/karla-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Bulk Yard","url":"https://smalljobtools.com/garden-calculators/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free mulch, gravel, topsoil, and sod calculator that converts bed dimensions and depth into cubic yards, bags, tons, and an estimated cost."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bags are in a cubic yard?","acceptedAnswer":{"@type":"Answer","text":"A cubic yard is 27 cubic feet. With 2 cu ft bags, that is 13.5 bags; with 0.5 cu ft bags, 54 bags. The calculator rounds up to whole bags."}},{"@type":"Question","name":"How much does a cubic yard of mulch cover?","acceptedAnswer":{"@type":"Answer","text":"About 324 sq ft at 1 inch deep, 162 sq ft at 2 inches, 108 sq ft at 3 inches, and 81 sq ft at 4 inches."}},{"@type":"Question","name":"Should I order bulk or bags?","acceptedAnswer":{"@type":"Answer","text":"Bags are easier for small jobs under a cubic yard. Bulk is usually cheaper per yard for larger jobs, but check delivery fees and access."}},{"@type":"Question","name":"Do I need extra for settling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add about 10% for settling, uneven ground, and edges. The estimate is a starting point, not a guarantee."}},{"@type":"Question","name":"How is the cost calculated?","acceptedAnswer":{"@type":"Answer","text":"The default prices are rough US averages per cubic yard or per square foot for sod. Change the price field to match your local yard."}},{"@type":"Question","name":"Does this work for sod?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose sod and the calculator switches to square feet and 500 sq ft pallets. It does not use depth."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QT91VKFN8L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});gtag('js',new Date());gtag('config','G-QT91VKFN8L',{anonymize_ip:true,send_page_view:false});</script>
+</head>
+<body data-page="home" data-preset-material="mulch">
+<a class="skip-link" href="#generator">Skip to calculator</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="./" aria-label="Bulk Yard home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 9h18l-2 19H9L7 9Z" fill="#cbb089" stroke="#142016" stroke-width="2"/><path d="M10 9c0-3 2.7-5 6-5s6 2 6 5" fill="none" stroke="#c7f36b" stroke-width="2"/><path d="M11 18h10M11 22h7" stroke="#1e4d2b" stroke-width="2"/></svg>
+      <span>Bulk Yard</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./gravel-calculator/">Gravel</a>
+      <a href="./soil-calculator/">Topsoil</a>
+      <a href="./sod-calculator/">Sod</a>
+    </nav>
+    <span class="header-chip">Free · No signup</span>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="generator">
+  <div class="wrap hero__inner">
+    <div class="hero__copy reveal">
+      <h1>Order the right amount. <em>Not the extra trip.</em></h1>
+      <p class="hero__sub">Enter the bed size and depth. Get cubic yards, bags, tons, and a rough cost for mulch, gravel, topsoil, or sod.</p>
+      <p class="hero__trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Free · No signup · No data stored.</p>
+      <p class="hero__note">Built for real beds and real bulk yards. Estimates only; check local prices before ordering.</p>
+    </div>
+    <div class="bag-wrap">
+      <div class="bag"><form class="order" id="yard-form" novalidate>
+  <div class="order__head">
+    <strong>Bulk order / No. 01</strong>
+    <span>Yards · bags · tons</span>
+  </div>
+  <div class="order__body">
+    <div class="field">
+      <label for="material">Material</label>
+      <select id="material" name="material">
+        <option value="mulch" selected>Mulch</option>
+<option value="gravel">Gravel</option>
+<option value="soil">Topsoil</option>
+<option value="sod">Sod</option>
+      </select>
+    </div>
+    <fieldset class="fieldset">
+      <legend>Bed shape</legend>
+      <div class="shape-toggle">
+        <label><input type="radio" name="shape" value="rectangle" checked><span>Rectangle</span></label>
+        <label><input type="radio" name="shape" value="circle"><span>Circle</span></label>
+      </div>
+    </fieldset>
+    <div class="dim-row">
+      <div class="field" id="length-field">
+        <label for="length">Length (ft)</label>
+        <input id="length" name="length" type="number" min="0.1" step="0.1" value="10" inputmode="decimal">
+      </div>
+      <div class="field" id="width-field">
+        <label for="width">Width (ft)</label>
+        <input id="width" name="width" type="number" min="0.1" step="0.1" value="10" inputmode="decimal">
+      </div>
+      <div class="field" id="diameter-field" hidden>
+        <label for="diameter">Diameter (ft)</label>
+        <input id="diameter" name="diameter" type="number" min="0.1" step="0.1" value="10" inputmode="decimal">
+      </div>
+    </div>
+    <div class="dim-row">
+      <div class="field" id="depth-field">
+        <label for="depth">Depth (in)</label>
+        <input id="depth" name="depth" type="number" min="0.5" max="24" step="0.5" value="3" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="price" id="price-label">Price / cu yd</label>
+        <input id="price" name="price" type="number" min="0.01" step="0.01" value="38" inputmode="decimal">
+      </div>
+    </div>
+    <p class="field__error" id="yard-error" role="alert" hidden></p>
+    <button class="submit" type="submit">
+      <span>Calculate my load</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    </button>
+    <p class="order__foot">Free · no signup · estimate only</p>
+  </div>
+</form></div>
+    </div>
+  </div>
+</section>
+<section class="order-section" id="results" aria-labelledby="order-title">
+  <div class="wrap">
+    <div class="order-section__intro">
+      <h2 id="order-title">Your bulk order</h2>
+      <p>Cubic yards, bags, tons, and a rough cost. Copy the list and take it to the yard.</p>
+    </div>
+    <div class="ticket">
+      <div class="ticket__head">
+        <strong>Material list</strong>
+        <span id="ticket-meta">Estimate / no plan yet</span>
+      </div>
+      <div class="ticket-empty" id="ticket-empty">
+        <p class="ticket-empty__note"><span>Sample</span> Your delivery ticket will print here.</p>
+        <div class="sample-line"><span>Mulch · 12 × 8 ft · 3 in</span><strong>1.1 cu yd</strong></div>
+        <div class="sample-line"><span>Bags (2 cu ft)</span><strong>15 bags</strong></div>
+        <div class="sample-line"><span>Estimated cost</span><strong>$41.80</strong></div>
+        <div class="empty-actions">
+          <button class="link-button" id="fill-example" type="button">Try an example</button>
+        </div>
+      </div>
+      <div class="ticket__body" id="ticket-result" hidden>
+        <div class="ticket-result">
+          <div class="ticket-big">
+            <strong id="big-number">0</strong>
+            <span id="big-label">cubic yards</span>
+          </div>
+          <div class="ticket-rows" id="ticket-rows"></div>
+          <p class="ticket-note" id="ticket-note"></p>
+          <div class="ticket-actions">
+            <button class="button-quiet" id="copy-list" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="11" height="11"/><path d="M5 15V4h11"/></svg><span>Copy list</span></button>
+            <button class="button-quiet" id="calculate-again" type="button">New calculation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="ticket-foot">Estimates only. Bulk prices vary by yard, delivery, and season. Add 10% for settling and uneven ground.</p>
+    <span class="sr-only" id="yard-status" role="status" aria-live="polite"></span>
+  </div>
+</section>
+<section class="section" aria-labelledby="coverage-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="coverage-title">How far does a cubic yard go?</h2>
+      <p>One cubic yard is 27 cubic feet. Coverage depends on how deep you spread it.</p>
+    </div>
+    <div class="cubes">
+      <div class="cube"><span class="cube__depth">1 inch deep</span><h3>324 sq ft</h3><p>A light refresh or a small bed.</p></div>
+      <div class="cube"><span class="cube__depth">2 inches deep</span><h3>162 sq ft</h3><p>Topdressing a lawn or a shallow bed.</p></div>
+      <div class="cube"><span class="cube__depth">3 inches deep</span><h3>108 sq ft</h3><p>The usual mulch depth for weed control.</p></div>
+      <div class="cube"><span class="cube__depth">4 inches deep</span><h3>81 sq ft</h3><p>Gravel paths, driveways, and heavy cover.</p></div>
+    </div>
+    <div class="note-box" style="margin-top: 24px;"><strong>The formula</strong>Area (sq ft) × depth (in) ÷ 12 = cubic feet. Cubic feet ÷ 27 = cubic yards. Add 10% for settling.</div>
+  </div>
+</section>
+<section class="section section--green" aria-labelledby="rules-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="rules-title">Bulk or bags?</h2>
+      <p>The math is the same; the packaging is not. Pick the one that saves you a second trip.</p>
+    </div>
+    <div class="rules">
+      <div class="rule"><span class="rule__num">01</span><h3>Small jobs, bags</h3><p>Under a cubic yard, bags are easier to carry and store. A 2 cu ft bag is 1/13.5 of a yard.</p></div>
+      <div class="rule"><span class="rule__num">02</span><h3>Big jobs, bulk</h3><p>Over a cubic yard, bulk is usually cheaper per yard and fewer trips. Check delivery fees.</p></div>
+      <div class="rule"><span class="rule__num">03</span><h3>Order a little extra</h3><p>Add 10% for settling and uneven ground. Running short on a Sunday is the expensive part.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div class="faq__intro">
+      <h2 id="faq-title">Before you order.</h2>
+      <p>Short answers. No trip to the yard required.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How many bags are in a cubic yard?</summary><p>A cubic yard is 27 cubic feet. With 2 cu ft bags, that is 13.5 bags; with 0.5 cu ft bags, 54 bags. The calculator rounds up to whole bags.</p></details>
+<details class="faq-item"><summary>How much does a cubic yard of mulch cover?</summary><p>About 324 sq ft at 1 inch deep, 162 sq ft at 2 inches, 108 sq ft at 3 inches, and 81 sq ft at 4 inches.</p></details>
+<details class="faq-item"><summary>Should I order bulk or bags?</summary><p>Bags are easier for small jobs under a cubic yard. Bulk is usually cheaper per yard for larger jobs, but check delivery fees and access.</p></details>
+<details class="faq-item"><summary>Do I need extra for settling?</summary><p>Yes. Add about 10% for settling, uneven ground, and edges. The estimate is a starting point, not a guarantee.</p></details>
+<details class="faq-item"><summary>How is the cost calculated?</summary><p>The default prices are rough US averages per cubic yard or per square foot for sod. Change the price field to match your local yard.</p></details>
+<details class="faq-item"><summary>Does this work for sod?</summary><p>Yes. Choose sod and the calculator switches to square feet and 500 sq ft pallets. It does not use depth.</p></details>
+    </div>
+  </div>
+</section>
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap cta__inner">
+    <h2 id="cta-title">Stop guessing. Order the right amount.</h2>
+    <a class="submit" href="#yard-form"><span>Calculate my load</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="site-footer__bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="wrap">
+    <div class="site-footer__inner">
+      <div>
+        <a class="brand" href="./"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 9h18l-2 19H9L7 9Z" fill="#cbb089" stroke="#142016" stroke-width="2"/><path d="M10 9c0-3 2.7-5 6-5s6 2 6 5" fill="none" stroke="#c7f36b" stroke-width="2"/><path d="M11 18h10M11 22h7" stroke="#1e4d2b" stroke-width="2"/></svg><span>Bulk Yard</span></a>
+        <p class="site-footer__note">Measure once. Order the right amount. A simple material calculator for mulch, gravel, topsoil, and sod.</p>
+      </div>
+      <div>
+        <h2>Calculators</h2>
+        <ul>
+          <li><a href="./">Mulch</a></li>
+          <li><a href="./gravel-calculator/">Gravel</a></li>
+          <li><a href="./soil-calculator/">Topsoil</a></li>
+          <li><a href="./sod-calculator/">Sod</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Useful</h2>
+        <ul>
+          <li><a href="./privacy/">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 Bulk Yard</span>
+      <span>Estimates only. Check local bulk prices before ordering.</span>
+    </div>
+  </div>
+<div style="max-width:1180px;margin:24px auto 0;padding:16px 24px 0;border-top:1px solid rgba(128,128,128,.35);font:12px/1.5 system-ui,sans-serif;opacity:1"><a href="/" style="color:inherit;text-decoration:underline">Small Job Tools — all tools</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./assets/app.js"></script>
+<script>window.__GA__={id:"G-QT91VKFN8L",consentHref:"./privacy/"};</script>
+<script defer src="./assets/analytics.js"></script>
+</body>
+</html>
