@@ -2,7 +2,7 @@
   "use strict";
 
   var cfg = window.__GA__ || {};
-  var id = cfg.id || "G-5QWJZ0635S";
+  var id = cfg.id;
   var consentHref = cfg.consentHref || "/privacy/";
   var KEY = "ga-consent-v1";
 
