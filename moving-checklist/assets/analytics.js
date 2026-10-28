@@ -15,7 +15,67 @@
     return;
   }
 
-  if (typeof window.gtag !== "function") return;
+  function gaLibraryLoaded() {
+    return typeof window.gtag === "function" && Boolean(window.google_tag_data);
+  }
+
+  function gaClientId() {
+    try {
+      var key = "ga-cid-v1";
+      var id = localStorage.getItem(key);
+      if (id) return id;
+      id = Math.random().toString(36).slice(2) + "." + Date.now();
+      localStorage.setItem(key, id);
+      return id;
+    } catch (error) {
+      return String(Date.now());
+    }
+  }
+
+  function directEvent(name, params) {
+    var eventParams = params || {};
+    var query = new URLSearchParams();
+    query.set("v", "2");
+    query.set("tid", id);
+    query.set("cid", gaClientId());
+    query.set("en", name);
+    query.set("dl", location.href);
+    query.set("dt", document.title);
+    query.set("dp", location.pathname + location.search);
+    query.set("aip", "1");
+    query.set("z", String(Date.now()));
+    if (document.referrer) query.set("dr", document.referrer);
+    for (var key in eventParams) {
+      if (!Object.prototype.hasOwnProperty.call(eventParams, key)) continue;
+      var value = eventParams[key];
+      if (value === null || value === undefined) continue;
+      if (typeof value === "number" && Number.isFinite(value)) {
+        query.set("epn." + key, String(value));
+      } else {
+        query.set("ep." + key, String(value));
+      }
+    }
+    var body = query.toString();
+    var url = "https://www.google-analytics.com/g/collect";
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(url, new Blob([body], { type: "application/x-www-form-urlencoded" }));
+      return;
+    }
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body,
+      keepalive: true,
+    }).catch(function () {});
+  }
+
+  function sendEvent(name, params) {
+    if (gaLibraryLoaded()) {
+      gtag("event", name, params || {});
+    } else {
+      directEvent(name, params);
+    }
+  }
 
   function readChoice() {
     try {
@@ -46,7 +106,7 @@
   }
 
   function sendPageView() {
-    gtag("event", "page_view", {
+    sendEvent("page_view", {
       page_location: location.href,
       page_title: document.title,
     });
@@ -54,9 +114,8 @@
 
   function trackEvent(name, params) {
     if (!name || typeof name !== "string") return;
-    if (typeof gtag !== "function") return;
     if (readChoice() !== "granted") return;
-    gtag("event", name, params || {});
+    sendEvent(name, params);
   }
 
   window.trackEvent = trackEvent;
