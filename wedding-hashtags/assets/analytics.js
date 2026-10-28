@@ -15,10 +15,6 @@
     return;
   }
 
-  function gaLibraryLoaded() {
-    return typeof window.gtag === "function" && Boolean(window.google_tag_data);
-  }
-
   function gaClientId() {
     try {
       var key = "ga-cid-v1";
@@ -44,6 +40,17 @@
     query.set("dp", location.pathname + location.search);
     query.set("aip", "1");
     query.set("z", String(Date.now()));
+    try {
+      var sid = sessionStorage.getItem("ga-sid-v1");
+      if (!sid) {
+        sid = String(Date.now());
+        sessionStorage.setItem("ga-sid-v1", sid);
+      }
+      query.set("sid", sid);
+      query.set("sct", "1");
+    } catch (error) {
+      // Session parameters are optional.
+    }
     if (document.referrer) query.set("dr", document.referrer);
     for (var key in eventParams) {
       if (!Object.prototype.hasOwnProperty.call(eventParams, key)) continue;
@@ -56,25 +63,17 @@
       }
     }
     var body = query.toString();
-    var url = "https://www.google-analytics.com/g/collect";
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(url, new Blob([body], { type: "application/x-www-form-urlencoded" }));
-      return;
-    }
-    fetch(url, {
+    fetch("https://www.google-analytics.com/g/collect", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
+      body: body,
       keepalive: true,
+      credentials: "omit",
     }).catch(function () {});
   }
 
   function sendEvent(name, params) {
-    if (gaLibraryLoaded()) {
-      gtag("event", name, params || {});
-    } else {
-      directEvent(name, params);
-    }
+    directEvent(name, params);
   }
 
   function readChoice() {
@@ -160,7 +159,6 @@
       .addEventListener("click", function () {
         writeChoice("granted");
         banner.remove();
-        gtag("consent", "update", { analytics_storage: "granted" });
         sendPageView();
       });
     banner
@@ -168,14 +166,12 @@
       .addEventListener("click", function () {
         writeChoice("denied");
         banner.remove();
-        gtag("consent", "update", { analytics_storage: "denied" });
       });
   }
 
   function init() {
     var choice = readChoice();
     if (choice === "granted") {
-      gtag("consent", "update", { analytics_storage: "granted" });
       sendPageView();
     } else if (choice !== "denied") {
       showBanner();
@@ -187,6 +183,12 @@
       event.preventDefault();
       try {
         localStorage.removeItem(KEY);
+      } catch (error) {
+        // Ignore storage failures.
+      }
+      try {
+        localStorage.removeItem("ga-cid-v1");
+        sessionStorage.removeItem("ga-sid-v1");
       } catch (error) {
         // Ignore storage failures.
       }
